@@ -1,0 +1,28 @@
+﻿@model IEnumerable<PassportOffice>
+@{
+    ViewData["Title"] = "Available Offices";
+}
+<h3>All Passport Office available right now.</h3>
+<br />
+<hp>Add a Passport Office <a asp-controller="PassportOffice" asp-action="AddOffice">Here</a></hp>
+<div>
+    <table>
+        <tr>
+            <th>OfficeId</th>
+            <th>OfficeName</th>
+            <th>Jurisdiction</th>
+            <th>Address</th>
+            <th>PhoneNumber</th>
+        </tr>
+        @foreach(var passportOffice in Model)
+        {
+            <tr>
+                <td>@passportOffice.OfficeId</td>
+                <td>@passportOffice.OfficeName</td>
+                <td>@passportOffice.Jurisdiction</td>
+                <td>@passportOffice.Address</td>
+                <td>@passportOffice.PhoneNumber</td>
+            </tr>
+        }
+    </table>
+</div>

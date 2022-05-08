@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using EPassport.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
 builder.Services.AddDbContext<EPassportContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("dbconn")));
+options.UseSqlServer(builder.Configuration.GetConnectionString("Dbconn")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
